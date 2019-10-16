@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # get commit logs and determine home to bump the version
 
 # if we have a blank tag, get all commits
