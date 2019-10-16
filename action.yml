@@ -1,0 +1,6 @@
+# action.yml
+name: 'Tag Release'
+description: 'Tags a release in Github'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
