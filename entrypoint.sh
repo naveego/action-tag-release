@@ -28,7 +28,7 @@ curl -s -X POST https://api.github.com/repos/$REPO_OWNER/$repo/git/refs \
 -H "Authorization: token $GITHUB_TOKEN" \
 -d @- << EOF
 {
-  "ref": "refs/tags/$new",
+  "ref": "refs/tags/v$new",
   "sha": "$commit"
 }
 EOF
