@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # get latest tag
-t=$(git describe --tags `git rev-list --tags --max-count=1`)
+lastTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+t="${lastTag:1}"
 # print latest
-echo $t
+echo "Tag: $lastTag Version: $t"
 
 # if we have a blank tag, get all commits
 if [ -z "$t" ]
