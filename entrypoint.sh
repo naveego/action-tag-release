@@ -20,8 +20,11 @@ case "$log" in
 esac
 
 # get repo name from git
+commit=$(git rev-parse HEAD)
 remote=$(git config --get remote.origin.url)
 repo=$(basename $remote .git)
+
+echo "Posting Tag: v$new on commit $commit to https://api.github.com/repos/$REPO_OWNER/$repo/git/refs"
 
 # POST a new ref to repo via Github API
 curl -s -X POST https://api.github.com/repos/$REPO_OWNER/$repo/git/refs \
